@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: web-crawler-api
+    env: python
+    plan: free
+    buildCommand: "./render-build.sh"
+    startCommand: "python app.py"
+    autoDeploy: true
