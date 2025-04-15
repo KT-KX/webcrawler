@@ -1,8 +1,7 @@
 services:
   - type: web
     name: web-crawler-api
-    env: python
+    env: docker
+    buildCommand: "docker build -t web-crawler ."
+    startCommand: "docker run -p 8080:8080 web-crawler"
     plan: free
-    buildCommand: "./render-build.sh"
-    startCommand: "python app.py"
-    autoDeploy: true
